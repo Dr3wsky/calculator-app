@@ -56,11 +56,12 @@
   
   .device {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     background-color: var(--primary-dark);
     width: 500px;
-    height: 700px;
+    height: 516px; 
     border: 6px black solid;
     border-radius: 18px;
     box-shadow: var(--secondary-light) 36px 24px;
@@ -81,13 +82,64 @@
 
   .history {
     color: var(--primary-light);
+    font-size: 34px;
+    padding-right: 16px;
 
   }
 
   .input {
     color: var(--primary-light);
-    font-size: ;
+    font-size: 46px;
+    padding-right: 16px;
   }
+
+  .buttons-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 450px;
+    gap:2px;
+    margin-top: 40px;
+  }
+
+  .buttons-nums {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 60%;
+  }
+
+  .btn-num {
+    height:auto;
+    padding:25px;
+    width: 30%;
+    margin:4px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .buttons-funcs {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 40%;
+  }
+
+  .btn-func {
+    padding:25px;
+    width: 42%;
+    margin:4px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  #equals {
+    background-color: red;
+    width:90%;
+  }
+
+
+
   
 
   
@@ -101,7 +153,8 @@
       justify-content: center;
       gap: 10px;
       width: 100%;
-      font-size: 16px;
+      font-size: 18px;
+      font-weight:bolder
     }
   
   .am-github {
