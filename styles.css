@@ -1,9 +1,9 @@
 /* Themes and default */
 :root {
     --primary-dark: rgb(51, 44, 44);
-    --primary-light: #97949498;
+    --primary-light: rgb(110, 189, 107);
     --background: rgb(134, 196, 155);
-    --secondary-light: #e7dcdc;
+    --secondary-light: #97949498;;
   }
   *,
   *::before,
@@ -16,7 +16,7 @@
   body {
     background-color: var(--background);
     color: var(--primary-dark);
-    font-family: 'Lucida Console', sans-serif;
+    font-family: 'Courier New', monospace;
         /* footer support */
     margin-bottom: 70px;
   }
@@ -28,7 +28,7 @@
     
   }
   
-  button,
+  /* button,
   input {
     width: 100%;
     background-color: var(--);
@@ -38,7 +38,7 @@
     font-size: inherit;
     cursor: pointer;
     outline: none;
-  }
+  } */
   
   /* Header */
   .header {
@@ -56,13 +56,38 @@
   
   .device {
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
     background-color: var(--primary-dark);
     width: 500px;
     height: 700px;
     border: 6px black solid;
     border-radius: 18px;
-    box-shadow: var(--primary-light) 36px 24px;
+    box-shadow: var(--secondary-light) 36px 24px;
     }
+
+  .screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100px;
+    width: 400px;
+    background-color: var(--secondary-light);
+    margin-top: 40px;
+    border-radius: 18px;
+    border: 3px black solid;
+  }
+
+  .history {
+    color: var(--primary-light);
+
+  }
+
+  .input {
+    color: var(--primary-light);
+    font-size: ;
+  }
   
 
   
