@@ -10,11 +10,25 @@ funcs.forEach(f => f.addEventListener('click', updateOperator));
 
 /* Update screen from event listener inputs */
 function updateInput(e) {
-    input.textContent += e.target.textContent;
+    if (input.textContent.length < 10) {
+        input.textContent += e.target.textContent;
+    }
+    // add class to flash screen background red for too long of an entry
 };
 
 function updateOperator(e) {
-    console.log(e);
+    switch (e.target.id) {
+        case 'clear-all':
+            clearAll();
+            break;
+        case 'delete':
+            deleteChar();
+            break;
+        case 'equals':
+            history.textContent = operate(operator, Number(history.textContent), Number(input.textContent.slice(1))) //Need to change these to numbers
+            clearInput();
+            break;
+    }
 };
 
 
@@ -50,6 +64,10 @@ function operate(operator, num1, num2) {
     }
 };
 
+function deleteChar() {
+    input.textContent = input.textContent.slice(0, -1);
+};
+
 function clearInput() {
     input.textContent = '';
 };
@@ -57,4 +75,4 @@ function clearInput() {
 function clearAll() {
     input.textContent = '';
     history.textContent = '';
-}
+};
