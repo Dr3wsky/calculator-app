@@ -1,6 +1,6 @@
 /* Initialize DOM elements */
-const history = document.getElementById("history");
-const input = document.getElementById("input");
+let history = document.getElementById("history");
+let input = document.getElementById("input");
 const nums = Array.from(document.querySelectorAll('.btn-num'));
 const funcs = Array.from(document.querySelectorAll('.btn-func'));
 
@@ -10,7 +10,7 @@ funcs.forEach(f => f.addEventListener('click', updateOperator));
 
 /* Update screen from event listener inputs */
 function updateInput(e) {
-    console.log(e);
+    input.textContent += e.target.textContent;
 };
 
 function updateOperator(e) {
@@ -49,3 +49,12 @@ function operate(operator, num1, num2) {
             return null;
     }
 };
+
+function clearInput() {
+    input.textContent = '';
+};
+
+function clearAll() {
+    input.textContent = '';
+    history.textContent = '';
+}
