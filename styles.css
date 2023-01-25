@@ -1,9 +1,9 @@
 /* Themes and default */
 :root {
     --primary-dark: rgb(51, 44, 44);
-    --primary-light: rgb(110, 189, 107);
+    --primary-light: rgb(121, 233, 118);
     --background: rgb(134, 196, 155);
-    --secondary-light: #97949498;;
+    --secondary-light: #97949498;
   }
   *,
   *::before,
@@ -28,18 +28,6 @@
     
   }
   
-  /* button,
-  input {
-    width: 100%;
-    background-color: var(--);
-    border: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    outline: none;
-  } */
-  
   /* Header */
   .header {
     padding: 26px 0;
@@ -61,7 +49,7 @@
     justify-content: flex-start;
     background-color: var(--primary-dark);
     width: 500px;
-    height: 516px; 
+    height: 580px; 
     border: 6px black solid;
     border-radius: 18px;
     box-shadow: var(--secondary-light) 36px 24px;
@@ -102,40 +90,49 @@
     margin-top: 40px;
   }
 
-  .buttons-nums {
+  .buttons-nums, .buttons-funcs {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
+  }
+
+  .buttons-nums {
     width: 60%;
   }
 
-  .btn-num {
-    height:auto;
-    padding:25px;
-    width: 30%;
-    margin:4px;
-    border-radius: 4px;
-    text-align: center;
-  }
-
   .buttons-funcs {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
     width: 40%;
   }
 
-  .btn-func {
-    padding:25px;
-    width: 42%;
+  .btn-num, .btn-func {
+    font-size: 24px;
     margin:4px;
     border-radius: 4px;
+    padding:25px;
     text-align: center;
+    background-color:  rgb(212, 210, 210);
+  }
+
+  .btn-num {
+    width: 30%;
+  }
+
+  .btn-func {
+    width: 42%;
   }
 
   #equals {
     background-color: red;
+    text-align: center;
     width:90%;
+  }
+
+  #delete {
+    padding-left: 14px;
+  }
+
+  #clear-all {
+    padding-left: 20px;
   }
 
 
