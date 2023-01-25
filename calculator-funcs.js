@@ -1,5 +1,24 @@
-/*  Set core operator functions */
+/* Initialize DOM elements */
+const history = document.getElementById("history");
+const input = document.getElementById("input");
+const nums = Array.from(document.querySelectorAll('.btn-num'));
+const funcs = Array.from(document.querySelectorAll('.btn-func'));
 
+/* Create event listeners */
+nums.forEach(n => n.addEventListener('click', updateInput));
+funcs.forEach(f => f.addEventListener('click', updateOperator));
+
+/* Update screen from event listener inputs */
+function updateInput(e) {
+    console.log(e);
+};
+
+function updateOperator(e) {
+    console.log(e);
+};
+
+
+/*  Set core operator functions */
 function add(num1, num2) {
     return (num1 + num2);
 };
