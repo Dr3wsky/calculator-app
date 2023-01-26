@@ -121,12 +121,6 @@
     width: 42%;
   }
 
-  #equals {
-    background-color: red;
-    text-align: center;
-    width:90%;
-  }
-
   #delete {
     padding-left: 14px;
   }
@@ -135,9 +129,29 @@
     padding-left: 20px;
   }
 
+  .btn-num:hover, .btn-func:hover {
+    background-color:  rgb(165, 165, 165);
+  }
 
+  .btn-num:active, .btn-func:active {
+    background-color:  rgb(99, 98, 98);
+    color: white;
+  }
 
-  
+  #equals {
+    background-color: var(--primary-light);
+    text-align: center;
+    width:90%;
+  }
+
+  #equals:hover {
+    background-color:rgb(98, 189, 95);
+  }
+
+  #equals:active {
+    background-color:rgb(33, 66, 32);
+    color: yellow;
+  }  
 
   
   /* Footer */
