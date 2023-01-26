@@ -12,13 +12,7 @@ funcs.forEach(f => f.addEventListener('click', operatorInput));
 
 /* Update screen from event listener inputs */
 function numInput(e) {
-    if (input.textContent.length == 1 && input.textContent == '0') {
-        return input.textContent = e.target.textContent;
-    }
-    if (input.textContent.length == 1 && input.textContent !== '0') {
-        return input.textContent += e.target.textContent;
-    }
-    if (input.textContent.length > 1 && input.textContent.length < 10) {
+    if (input.textContent.length < 10) {
         return input.textContent += e.target.textContent;
     }
 };
@@ -36,7 +30,7 @@ function operatorInput(e) {
         input.textContent = operator + input.textContent;
     }
     else {
-        nonMathFunc();
+        nonMathFunc(e);
     }
 };
 
@@ -90,18 +84,15 @@ function operate(operator, num1, num2) {
 
 function deleteChar() {
     input.textContent = input.textContent.slice(0, -1);
-    if (input.textContent = '') {
-        input.textContent = '0';
     }
-};
 
 function clearInput() {
-    input.textContent = '0';
+    input.textContent = '';
     operator = '';
 };
 
 function clearAll() {
-    input.textContent = '0';
+    input.textContent = '';
     history.textContent = '';
     operator = '';
 };
