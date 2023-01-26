@@ -2,7 +2,7 @@
 let history = document.getElementById("history");
 let input = document.getElementById("input");
 let operator = '';
-const operatorArray = ['/', '*', '+', '-'];
+const operatorArray = ['÷', '×', '+', '-'];
 const nums = Array.from(document.querySelectorAll('.btn-num'));
 const funcs = Array.from(document.querySelectorAll('.btn-func'));
 
@@ -73,9 +73,9 @@ function operate(operator, num1, num2) {
             return add(num1, num2);
         case '-':
             return subtract(num1, num2);
-        case '*':
+        case '×':
             return multiply(num1, num2);
-        case '/':
+        case '÷':
             return divide(num1, num2);
         default:
             return null;
