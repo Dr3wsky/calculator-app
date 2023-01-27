@@ -2,6 +2,8 @@
 let history = document.getElementById("history");
 let input = document.getElementById("input");
 let operator = '';
+let inputActive = false;
+let hsitoryActive = false;
 const operatorArray = ['÷', '×', '+', '-'];
 const nums = Array.from(document.querySelectorAll('.btn-num'));
 const funcs = Array.from(document.querySelectorAll('.btn-func'));
@@ -12,8 +14,13 @@ funcs.forEach(f => f.addEventListener('click', operatorInput));
 
 /* Update screen from event listener inputs */
 function numInput(e) {
-    if (input.textContent.length < 10) {
-        return input.textContent += e.target.textContent;
+    if (inputActive == false) {
+        input.textContent = input.textContent.slice(0, 0);
+        input.textContent += e.target.textContent;
+        inputActive = true;
+    }
+    else if (inputActive == true && input.textContent.length <12) {
+        input.textContent += e.target.textContent;
     }
 };
     // add class to flash screen background red for too long of an entr};
@@ -21,7 +28,11 @@ function numInput(e) {
 function operatorInput(e) {
     if (operatorArray.includes(e.target.id) && operator === '') {
         operator = e.target.id;
+        if (input.textContent == '0') {
+            input.textContent = input.textContent.slice(0, 0);
+        }
         input.textContent = operator + input.textContent;
+        inputActive = true;
     }
     else if (operatorArray.includes(e.target.id) && operator !== '') {
         history.textContent = operate(operator, Number(history.textContent), Number(input.textContent.slice(1)));
@@ -43,7 +54,7 @@ function nonMathFunc(e) {
             deleteChar();
             break;
         case 'equals':
-            history.textContent = operate(operator, Number(history.textContent), Number(input.textContent.slice(1))) //Need to change these to numbers
+            history.textContent = operate(operator, Number(history.textContent), Number(input.textContent.slice(1)));
             clearInput();
             break;
     }
@@ -72,7 +83,7 @@ function operate(operator, num1, num2) {
         case '+':
             return add(num1, num2);
         case '-':
-            return subtract(num1, num2);
+            return add(num1, num2);
         case '×':
             return multiply(num1, num2);
         case '÷':
@@ -84,15 +95,22 @@ function operate(operator, num1, num2) {
 
 function deleteChar() {
     input.textContent = input.textContent.slice(0, -1);
-    }
+    if (input.textContent == '') {
+        input.textContent = '0';
+        inputActive = false;
+    } 
+}
 
 function clearInput() {
-    input.textContent = '';
+    input.textContent = '0';
     operator = '';
+    inputActive = false;
 };
 
 function clearAll() {
-    input.textContent = '';
-    history.textContent = '';
-    operator = '';
+        input.textContent = '0';
+        history.textContent = '';
+        operator = '';
+        inputActive = false;
+        historyActive = false;
 };
