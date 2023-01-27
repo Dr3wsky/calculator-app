@@ -1,0 +1,8 @@
+1) fix first entry bug where num1 is default zero if there is no history    
+        - Needs to be 1 for multiplication and division, then zero for addition and subtraction
+
+2) Limit the history display to a certain float length to not overflow display.
+
+3) enter logic in operator functions to handle Inf and Nan for divisible by zero.
+
+4) Add class to flash screen red when limit of input is reached.
