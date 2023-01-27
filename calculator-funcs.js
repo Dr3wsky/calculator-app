@@ -3,7 +3,6 @@ let history = document.getElementById("history");
 let input = document.getElementById("input");
 let operator = '';
 let inputActive = false;
-let hsitoryActive = false;
 const operatorArray = ['÷', '×', '+', '-'];
 const nums = Array.from(document.querySelectorAll('.btn-num'));
 const funcs = Array.from(document.querySelectorAll('.btn-func'));
@@ -38,7 +37,8 @@ function operatorInput(e) {
         history.textContent = operate(operator, Number(history.textContent), Number(input.textContent.slice(1)));
         clearInput();
         operator = e.target.id;
-        input.textContent = operator + input.textContent;
+        input.textContent = operator;
+        inputActive = true;
     }
     else {
         nonMathFunc(e);
@@ -112,5 +112,4 @@ function clearAll() {
         history.textContent = '';
         operator = '';
         inputActive = false;
-        historyActive = false;
 };
