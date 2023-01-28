@@ -69,41 +69,25 @@ function nonMathFunc(e) {
     }
 };
 
-//Switch to core operator function based on logged operator symbol
+//Switch to core operator computation  based on logged operator symbol
 function operate(operator, num1, num2) {
     switch (operator) {
         case '+':
-            return add(num1, num2);
+            return num1 + num2;
         case '-':
-            return add(num1, num2);
+            return num1 - num2;
         case '×':
-            return multiply(num1, num2);
+            return num1 * num2;
         case '÷':
-            return divide(num1, num2);
+            return num1 / num2;
         default:
             return null;
     }
 };
 
-/*  Core math operator functions */
-function add(num1, num2) {
-    return (num1 + num2);
-};
-
-function subtract(num1, num2) {
-    return (num1 - num2);
-};
-
-function multiply(num1, num2) {
-    return (num1 * num2);
-};
-
-function divide(num1, num2) {
-    return (num1 / num2);
-};
-
 
 /*  Display modification functions */
+// Delete (backspace) single charates on input line
 function deleteChar() {
     input.textContent = input.textContent.slice(0, -1);
     if (input.textContent == '') {
@@ -112,12 +96,14 @@ function deleteChar() {
     } 
 }
 
+// Clear input and refresh on computation
 function clearInput() {
     input.textContent = '0';
     operator = '';
     inputActive = false;
 };
 
+// Clear screen and history (full reset)
 function clearAll() {
         input.textContent = '0';
         history.textContent = '';
