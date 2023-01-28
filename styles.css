@@ -154,12 +154,11 @@
   }  
 
   .screenRed {
-    background-color:rgb(158, 19, 19) ;
+    background-color:rgb(158, 19, 19);
   }
-
+  
   .screenGreen {
-    background-color:rgb(33, 66, 32);
-    color: yellow;
+    background-color:var(--primary-light);
   }
 
   /* Footer */

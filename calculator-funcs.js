@@ -1,4 +1,5 @@
 /* Initialize DOM elements and global vars */
+const screen = document.querySelector('.screen');
 let history = document.getElementById("history");
 let input = document.getElementById("input");
 let operator = '';
@@ -24,6 +25,9 @@ function numInput(e) {
     // Continue adding numbers to existing inpout until screen midth reached
     else if (inputActive == true && input.textContent.length <12) {
         input.textContent += e.target.textContent;
+    }
+    else if (inputActive == true && input.textContent.length == 12) {
+        flashRed();
     }
 };
     // add class to flash screen background red for too long of an entr};
@@ -64,6 +68,7 @@ function nonMathFunc(e) {
             break;
         case 'equals':
             history.textContent = operate(operator, Number(history.textContent), Number(input.textContent.slice(1)));
+            flashGreen();
             clearInput();
             break;
     }
@@ -85,8 +90,27 @@ function operate(operator, num1, num2) {
     }
 };
 
+// Asynch function to wait momentarily and allow screen to flas colour for added class
+async function sleep(millseconds) {
+    return new Promise(resolve => setTimeout(resolve, millseconds));
+};
+
 
 /*  Display modification functions */
+// Flash screen red when max input is reached
+async function flashRed() {
+    screen.classList.add("screenRed");
+    await sleep(75);
+    screen.classList.remove("screenRed");
+};
+
+//Flash screen green when computation is complete
+async function flashGreen() {
+    screen.classList.add("screenGreen")
+    await sleep(75);
+    screen.classList.remove("screenGreen")
+};
+
 // Delete (backspace) single charates on input line
 function deleteChar() {
     input.textContent = input.textContent.slice(0, -1);
