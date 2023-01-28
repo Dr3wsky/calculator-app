@@ -152,7 +152,16 @@
     background-color:rgb(33, 66, 32);
     color: yellow;
   }  
-  
+
+  .screenRed {
+    background-color:rgb(158, 19, 19) ;
+  }
+
+  .screenGreen {
+    background-color:rgb(33, 66, 32);
+    color: yellow;
+  }
+
   /* Footer */
    footer {
       position: absolute;
